@@ -1,1 +1,17 @@
-{}
+{
+  "manifest_version": 3,
+  "name": "Chrome Focus Guard",
+  "version": "0.0.0",
+  "description": "Prevents unconscious, addictive browsing by intercepting navigation to distracting websites and presenting a motivational video overlay.",
+  "background": {
+    "service_worker": "background/index.js"
+  },
+  "permissions": [
+    "storage",
+    "webRequest",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
