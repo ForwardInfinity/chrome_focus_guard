@@ -10,12 +10,17 @@
   },
   "devDependencies": {
     "@samrum/vite-plugin-web-extension": "^5.1.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@types/jest": "^29.5.14",
     "@typescript-eslint/eslint-plugin": "^8.33.1",
     "@typescript-eslint/parser": "^8.33.1",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
     "husky": "^9.1.7",
+    "jest-environment-jsdom": "^30.0.0-beta.3",
     "prettier": "^3.5.3",
+    "ts-jest": "^29.3.4",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-static-copy": "^3.0.0"

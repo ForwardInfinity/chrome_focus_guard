@@ -4,8 +4,45 @@
 <head>
   <meta charset="UTF-8" />
   <title>Focus Guard Overlay</title>
+  <link rel="stylesheet" href="overlay.css" />
 </head>
 <body>
-  <!-- Content will be implemented in later phases -->
+  <div id="overlay-backdrop" class="overlay-backdrop" tabindex="-1" aria-modal="true" role="dialog">
+    <main class="overlay-content" role="main">
+      <video
+        id="motivational-video"
+        class="overlay-video"
+        preload="auto"
+        playsinline
+        tabindex="0"
+        aria-label="Motivational video"
+        muted
+        autoplay
+        disablepictureinpicture
+        controlslist="nodownload nofullscreen noremoteplayback"
+      ></video>
+      <div class="overlay-actions">
+        <button
+          id="proceed-btn"
+          class="overlay-btn"
+          type="button"
+          disabled
+          aria-disabled="true"
+        >
+          Proceed
+        </button>
+        <button
+          id="back-btn"
+          class="overlay-btn"
+          type="button"
+          disabled
+          aria-disabled="true"
+        >
+          Go Back
+        </button>
+      </div>
+    </main>
+  </div>
+  <script src="overlay.ts" type="module"></script>
 </body>
 </html>
