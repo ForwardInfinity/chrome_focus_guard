@@ -4,8 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <title>Focus Guard Popup</title>
+  <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
-  <!-- Content will be implemented in later phases -->
+  <div id="popup-root">
+    <h1 id="popup-title">Focus Guard</h1>
+    <div class="toggle-row">
+      <label class="switch">
+        <input type="checkbox" id="enabled-toggle" />
+        <span class="slider"></span>
+      </label>
+      <span id="enabled-label">Enabled</span>
+    </div>
+    <div class="pause-row">
+      <button id="pause-btn" type="button">Pause for 30 min</button>
+      <span id="pause-status" hidden></span>
+    </div>
+    <div class="options-row">
+      <a href="#" id="options-link">Blocklist & Settings</a>
+    </div>
+  </div>
+  <script type="module" src="popup.ts"></script>
 </body>
 </html>

@@ -23,6 +23,16 @@ chrome.webRequest.onBeforeRequest.addListener(
   async (details: any) => {
     const startTime = Date.now();
     try {
+      // Read enabled and pausedUntil from storage
+      const { enabled = true, pausedUntil = null } = await new Promise<any>(resolve =>
+        chrome.storage.sync.get(['enabled', 'pausedUntil'], resolve)
+      );
+      const now = Date.now();
+      if (enabled === false || (typeof pausedUntil === 'number' && pausedUntil > now)) {
+        // Extension is disabled or paused, do not block
+        return {};
+      }
+
       const blocklist = await getBlocklist();
       if (isDomainBlocked(details.url, blocklist)) {
         const overlayUrl = chrome.runtime.getURL(

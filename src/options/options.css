@@ -1,1 +1,172 @@
 /* Options CSS for blocklist management (COMP-UI-OPTIONS) */
+
+/* Base styles */
+body {
+  background: #f5f6fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
+.options-container {
+  background: #fff;
+  max-width: 480px;
+  margin: 48px auto 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.08);
+  padding: 32px 28px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #222;
+}
+
+.options-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+form {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+input[type="text"] {
+  flex: 1 1 0;
+  padding: 8px 12px;
+  border: 1.5px solid #bdbdbd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fafbfc;
+  color: #1a1a1a;
+}
+
+input[type="text"]:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px #1976d233;
+}
+
+button[type="submit"], .chip-remove-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  outline: none;
+  min-width: 48px;
+}
+
+button[type="submit"]:hover, .chip-remove-btn:hover {
+  background: #125ea2;
+}
+
+button[type="submit"]:focus, .chip-remove-btn:focus {
+  box-shadow: 0 0 0 3px #1976d255;
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-height: 32px;
+}
+
+.chip-list-empty {
+  color: #888;
+  font-size: 0.98rem;
+  padding: 4px 0;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  background: #e3eafc;
+  color: #1a237e;
+  border-radius: 16px;
+  padding: 0 8px 0 14px;
+  font-size: 1rem;
+  height: 32px;
+  box-shadow: 0 1px 2px rgba(25, 118, 210, 0.08);
+  gap: 4px;
+}
+
+.chip-label {
+  margin-right: 4px;
+  user-select: text;
+}
+
+.chip-remove-btn {
+  background: transparent;
+  color: #1976d2;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+}
+
+.chip-remove-btn:hover, .chip-remove-btn:focus {
+  background: #dbeafe;
+  color: #0d47a1;
+}
+
+.error-message {
+  color: #c62828;
+  font-size: 0.98rem;
+  margin-left: 8px;
+  align-self: center;
+  min-width: 120px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+}
+
+@media (max-width: 600px) {
+  .options-container {
+    max-width: 98vw;
+    padding: 16px 4vw 18px 4vw;
+  }
+  h1 {
+    font-size: 1.1rem;
+  }
+  .chip {
+    font-size: 0.95rem;
+    height: 28px;
+    padding: 0 6px 0 10px;
+  }
+}

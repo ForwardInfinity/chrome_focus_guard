@@ -4,8 +4,34 @@
 <head>
   <meta charset="UTF-8" />
   <title>Focus Guard Options</title>
+  <link rel="stylesheet" href="options.css" />
 </head>
 <body>
-  <!-- Content will be implemented in later phases -->
+  <main class="options-container" aria-labelledby="options-title">
+    <h1 id="options-title">Focus Guard: Blocklist Management</h1>
+    <p class="options-description">
+      Add or remove websites to your personal blocklist. When you visit a blocked site, Focus Guard will intervene to help you stay focused.
+    </p>
+    <form id="add-domain-form" autocomplete="off" aria-describedby="domain-error" novalidate>
+      <label for="domain-input" class="visually-hidden">Domain to block</label>
+      <input
+        id="domain-input"
+        name="domain"
+        type="text"
+        placeholder="Enter domain (e.g. facebook.com)"
+        aria-label="Domain to block"
+        required
+        pattern="^([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$"
+        autocomplete="off"
+      />
+      <button id="add-domain-btn" type="submit">Add</button>
+      <span id="domain-error" class="error-message" aria-live="polite"></span>
+    </form>
+    <section aria-label="Blocked domains" id="blocklist-section">
+      <ul id="blocklist-chips" class="chip-list" role="list">
+        <!-- Chips will be rendered here by options.ts -->
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
